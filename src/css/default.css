@@ -1,0 +1,14 @@
+body {
+	background: #ccc;
+  padding-top: 90px;
+	margin: 0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+td {
+	padding: 0;
+}
