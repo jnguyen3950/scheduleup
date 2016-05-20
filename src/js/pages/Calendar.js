@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class Calender extends React.Component {
+export default class Calendar extends React.Component {
   render() {
     return (
       <div class="container">

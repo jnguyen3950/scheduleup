@@ -20,7 +20,7 @@ export default class Signup extends React.Component {
         <div class="form-group">
           <div class="row">
             <div class="col-sm-6 col-sm-offset-3">
-              <Link to="calender"><input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now"/></Link>
+              <Link to="calendar"><input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now"/></Link>
             </div>
           </div>
         </div>

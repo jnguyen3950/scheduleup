@@ -18,7 +18,7 @@ export default class Login extends React.Component {
         <div class="form-group">
           <div class="row">
             <div class="col-sm-6 col-sm-offset-3">
-              <Link to="calender"><input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In"/></Link>
+              <Link to="calendar"><input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In"/></Link>
             </div>
           </div>
         </div>
