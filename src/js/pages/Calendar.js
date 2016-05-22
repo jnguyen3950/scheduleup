@@ -14,21 +14,39 @@ export default class Calendar extends React.Component {
     }
   }
 
+  monthTextFunc(num) {
+    var month = new Array(12);
+    month[0] = "January";
+    month[1] = "February";
+    month[2] = "March";
+    month[3] = "April";
+    month[4] = "May";
+    month[5] = "June";
+    month[6] = "July";
+    month[7] = "August";
+    month[8] = "September";
+    month[9] = "October";
+    month[10] = "November";
+    month[11] = "December";
+
+    var monthText = month[num];
+    return monthText;
+  }
+
   render() {
     var { currentDate } = this.state;
     var { currentMonth } = this.state;
     var { currentYear } = this.state;
+    var { monthText } = this.state;
     var weeksArray = cal.monthDays(currentYear, currentMonth)
-    console.log(weeksArray);
 
     return (
-      <div class="container" onLoad={this.print.bind(this)}>
-        <button onClick={this.print.bind(this)}>Click</button>
+      <div class="container">
     		<div class="calendar-container">
           <header>
             <div class="col-md-offset-1">
     				  <div class="day">{currentDate}</div>
-    				  <div class="month">{currentMonth + 1}</div>
+    				  <div class="month">{this.monthTextFunc(currentMonth)}</div>
             </div>
     			</header>
     			<table class="calendar">
