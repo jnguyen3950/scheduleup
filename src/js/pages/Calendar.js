@@ -1,14 +1,34 @@
 import React from "react";
 
+var c = require('calendar');
+var cal = new c.Calendar();
+
 export default class Calendar extends React.Component {
+  constructor() {
+    var currentTime = new Date();
+    super();
+    this.state = {
+      currentDate: currentTime.getDate(),
+      currentMonth: currentTime.getMonth(),
+      currentYear: currentTime.getFullYear(),
+    }
+  }
+
   render() {
+    var { currentDate } = this.state;
+    var { currentMonth } = this.state;
+    var { currentYear } = this.state;
+    var weeksArray = cal.monthDays(currentYear, currentMonth)
+    console.log(weeksArray);
+
     return (
-      <div class="container">
+      <div class="container" onLoad={this.print.bind(this)}>
+        <button onClick={this.print.bind(this)}>Click</button>
     		<div class="calendar-container">
           <header>
             <div class="col-md-offset-1">
-    				  <div class="day">18</div>
-    				  <div class="month">August</div>
+    				  <div class="day">{currentDate}</div>
+    				  <div class="month">{currentMonth + 1}</div>
             </div>
     			</header>
     			<table class="calendar">

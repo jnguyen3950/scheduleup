@@ -22,9 +22,6 @@ export default class Landing extends React.Component {
   }
 
   toggleSignup() {
-    // const signup = !this.state.signup;
-    // this.setState({signup});
-
     const login = false;
     const signup = true;
 
