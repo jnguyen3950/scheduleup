@@ -51,9 +51,8 @@
 	color: #e66b6b;
 }
 
-.prev-month,
-.next-month {
-	color: #cacaca;
+.hide-day {
+	color: transparent;
 }
 
 .ring-left,

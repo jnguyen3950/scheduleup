@@ -33,12 +33,18 @@ export default class Calendar extends React.Component {
     return monthText;
   }
 
+  hide(date) {
+    if(date == "0") {
+      return "hide-day";
+    }
+  }
+
   render() {
     const { currentDate } = this.state;
     const { currentMonth } = this.state;
     const { currentYear } = this.state;
     const { monthText } = this.state;
-    const weeksArray = cal.monthDays(currentYear, currentMonth)
+    const weeksArray = cal.monthDays(currentYear, currentMonth);
 
     return (
       <div class="container">
@@ -63,50 +69,51 @@ export default class Calendar extends React.Component {
     				</thead>
     				<tbody>
     					<tr>
-    						<td class={weeksArray[0][0]}>{weeksArray[0][0]}</td>
-    						<td class="prev-month">{weeksArray[0][1]}</td>
-    						<td class="prev-month">{weeksArray[0][2]}</td>
-    						<td>{weeksArray[0][3]}</td>
-    						<td>{weeksArray[0][4]}</td>
-    						<td>{weeksArray[0][5]}</td>
-    						<td>{weeksArray[0][6]}</td>
+    						<td class={this.hide(weeksArray[0][0])}>{weeksArray[0][0]}</td>
+    						<td class={this.hide(weeksArray[0][1])}>{weeksArray[0][1]}</td>
+    						<td class={this.hide(weeksArray[0][2])}>{weeksArray[0][2]}</td>
+    						<td class={this.hide(weeksArray[0][3])}>{weeksArray[0][3]}</td>
+    						<td class={this.hide(weeksArray[0][4])}>{weeksArray[0][4]}</td>
+    						<td class={this.hide(weeksArray[0][5])}>{weeksArray[0][5]}</td>
+    						<td class={this.hide(weeksArray[0][6])}>{weeksArray[0][6]}</td>
     					</tr>
     					<tr>
-    						<td>{weeksArray[1][0]}</td>
-    						<td>{weeksArray[1][1]}</td>
-    						<td>{weeksArray[1][2]}</td>
-    						<td>{weeksArray[1][3]}</td>
-    						<td>{weeksArray[1][4]}</td>
-    						<td>{weeksArray[1][5]}</td>
-    						<td>{weeksArray[1][6]}</td>
+    						<td class={this.hide(weeksArray[1][0])}>{weeksArray[1][0]}</td>
+    						<td class={this.hide(weeksArray[1][1])}>{weeksArray[1][1]}</td>
+    						<td class={this.hide(weeksArray[1][2])}>{weeksArray[1][2]}</td>
+    						<td class={this.hide(weeksArray[1][3])}>{weeksArray[1][3]}</td>
+    						<td class={this.hide(weeksArray[1][4])}>{weeksArray[1][4]}</td>
+    						<td class={this.hide(weeksArray[1][5])}>{weeksArray[1][5]}</td>
+    						<td class={this.hide(weeksArray[1][6])}>{weeksArray[1][6]}</td>
     					</tr>
     					<tr>
-    						<td>{weeksArray[2][0]}</td>
-    						<td>{weeksArray[2][1]}</td>
-    						<td>{weeksArray[2][2]}</td>
-    						<td>{weeksArray[2][3]}</td>
-    						<td>{weeksArray[2][4]}</td>
-    						<td>{weeksArray[2][5]}</td>
-    						<td class="current-day">{weeksArray[2][6]}</td>
+    						<td class={this.hide(weeksArray[2][0])}>{weeksArray[2][0]}</td>
+    						<td class={this.hide(weeksArray[2][1])}>{weeksArray[2][1]}</td>
+    						<td class={this.hide(weeksArray[2][2])}>{weeksArray[2][2]}</td>
+    						<td class={this.hide(weeksArray[2][3])}>{weeksArray[2][3]}</td>
+    						<td class={this.hide(weeksArray[2][4])}>{weeksArray[2][4]}</td>
+    						<td class={this.hide(weeksArray[2][5])}>{weeksArray[2][5]}</td>
+    						<td class={this.hide(weeksArray[2][6])}>{weeksArray[2][6]}</td>
     					</tr>
     					<tr>
-    						<td>{weeksArray[3][0]}</td>
-    						<td>{weeksArray[3][1]}</td>
-    						<td>{weeksArray[3][2]}</td>
-    						<td>{weeksArray[3][3]}</td>
-    						<td>{weeksArray[3][4]}</td>
-    						<td>{weeksArray[3][5]}</td>
-    						<td>{weeksArray[3][6]}</td>
+    						<td class={this.hide(weeksArray[3][0])}>{weeksArray[3][0]}</td>
+    						<td class={this.hide(weeksArray[3][1])}>{weeksArray[3][1]}</td>
+    						<td class={this.hide(weeksArray[3][2])}>{weeksArray[3][2]}</td>
+    						<td class={this.hide(weeksArray[3][3])}>{weeksArray[3][3]}</td>
+    						<td class={this.hide(weeksArray[3][4])}>{weeksArray[3][4]}</td>
+    						<td class={this.hide(weeksArray[3][5])}>{weeksArray[3][5]}</td>
+    						<td class={this.hide(weeksArray[3][6])}>{weeksArray[3][6]}</td>
     					</tr>
     					<tr>
-    						<td>{weeksArray[4][0]}</td>
-    						<td>{weeksArray[4][1]}</td>
-    						<td>{weeksArray[4][2]}</td>
-    						<td>{weeksArray[4][3]}</td>
-    						<td>{weeksArray[4][4]}</td>
-    						<td>{weeksArray[4][5]}</td>
-    						<td class="next-month">{weeksArray[4][6]}</td>
+    						<td class={this.hide(weeksArray[4][0])}>{weeksArray[4][0]}</td>
+    						<td class={this.hide(weeksArray[4][1])}>{weeksArray[4][1]}</td>
+    						<td class={this.hide(weeksArray[4][2])}>{weeksArray[4][2]}</td>
+    						<td class={this.hide(weeksArray[4][3])}>{weeksArray[4][3]}</td>
+    						<td class={this.hide(weeksArray[4][4])}>{weeksArray[4][4]}</td>
+    						<td class={this.hide(weeksArray[4][5])}>{weeksArray[4][5]}</td>
+    						<td class={this.hide(weeksArray[4][6])}>{weeksArray[4][6]}</td>
     					</tr>
+              
     				</tbody>
     			</table>
           <div class="ring-left"></div>
