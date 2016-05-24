@@ -1,5 +1,7 @@
 import React from "react";
 
+import Day from "../components/calendar/Day";
+
 var c = require('calendar');
 var cal = new c.Calendar();
 
@@ -46,6 +48,12 @@ export default class Calendar extends React.Component {
     const { monthText } = this.state;
     const weeksArray = cal.monthDays(currentYear, currentMonth);
 
+    const week1 = weeksArray[0].map((date, index) => <Day key={index} date={date}/>);
+    const week2 = weeksArray[1].map((date, index) => <Day key={index} date={date}/>);
+    const week3 = weeksArray[2].map((date, index) => <Day key={index} date={date}/>);
+    const week4 = weeksArray[3].map((date, index) => <Day key={index} date={date}/>);
+    const week5 = weeksArray[4].map((date, index) => <Day key={index} date={date}/>);
+
     return (
       <div class="container">
     		<div class="calendar-container">
@@ -69,51 +77,20 @@ export default class Calendar extends React.Component {
     				</thead>
     				<tbody>
     					<tr>
-    						<td class={this.hide(weeksArray[0][0])}>{weeksArray[0][0]}</td>
-    						<td class={this.hide(weeksArray[0][1])}>{weeksArray[0][1]}</td>
-    						<td class={this.hide(weeksArray[0][2])}>{weeksArray[0][2]}</td>
-    						<td class={this.hide(weeksArray[0][3])}>{weeksArray[0][3]}</td>
-    						<td class={this.hide(weeksArray[0][4])}>{weeksArray[0][4]}</td>
-    						<td class={this.hide(weeksArray[0][5])}>{weeksArray[0][5]}</td>
-    						<td class={this.hide(weeksArray[0][6])}>{weeksArray[0][6]}</td>
+    						{week1}
     					</tr>
     					<tr>
-    						<td class={this.hide(weeksArray[1][0])}>{weeksArray[1][0]}</td>
-    						<td class={this.hide(weeksArray[1][1])}>{weeksArray[1][1]}</td>
-    						<td class={this.hide(weeksArray[1][2])}>{weeksArray[1][2]}</td>
-    						<td class={this.hide(weeksArray[1][3])}>{weeksArray[1][3]}</td>
-    						<td class={this.hide(weeksArray[1][4])}>{weeksArray[1][4]}</td>
-    						<td class={this.hide(weeksArray[1][5])}>{weeksArray[1][5]}</td>
-    						<td class={this.hide(weeksArray[1][6])}>{weeksArray[1][6]}</td>
+    						{week2}
     					</tr>
     					<tr>
-    						<td class={this.hide(weeksArray[2][0])}>{weeksArray[2][0]}</td>
-    						<td class={this.hide(weeksArray[2][1])}>{weeksArray[2][1]}</td>
-    						<td class={this.hide(weeksArray[2][2])}>{weeksArray[2][2]}</td>
-    						<td class={this.hide(weeksArray[2][3])}>{weeksArray[2][3]}</td>
-    						<td class={this.hide(weeksArray[2][4])}>{weeksArray[2][4]}</td>
-    						<td class={this.hide(weeksArray[2][5])}>{weeksArray[2][5]}</td>
-    						<td class={this.hide(weeksArray[2][6])}>{weeksArray[2][6]}</td>
+    						{week3}
     					</tr>
     					<tr>
-    						<td class={this.hide(weeksArray[3][0])}>{weeksArray[3][0]}</td>
-    						<td class={this.hide(weeksArray[3][1])}>{weeksArray[3][1]}</td>
-    						<td class={this.hide(weeksArray[3][2])}>{weeksArray[3][2]}</td>
-    						<td class={this.hide(weeksArray[3][3])}>{weeksArray[3][3]}</td>
-    						<td class={this.hide(weeksArray[3][4])}>{weeksArray[3][4]}</td>
-    						<td class={this.hide(weeksArray[3][5])}>{weeksArray[3][5]}</td>
-    						<td class={this.hide(weeksArray[3][6])}>{weeksArray[3][6]}</td>
+    						{week4}
     					</tr>
     					<tr>
-    						<td class={this.hide(weeksArray[4][0])}>{weeksArray[4][0]}</td>
-    						<td class={this.hide(weeksArray[4][1])}>{weeksArray[4][1]}</td>
-    						<td class={this.hide(weeksArray[4][2])}>{weeksArray[4][2]}</td>
-    						<td class={this.hide(weeksArray[4][3])}>{weeksArray[4][3]}</td>
-    						<td class={this.hide(weeksArray[4][4])}>{weeksArray[4][4]}</td>
-    						<td class={this.hide(weeksArray[4][5])}>{weeksArray[4][5]}</td>
-    						<td class={this.hide(weeksArray[4][6])}>{weeksArray[4][6]}</td>
+    						{week5}
     					</tr>
-              
     				</tbody>
     			</table>
           <div class="ring-left"></div>
