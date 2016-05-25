@@ -35,12 +35,6 @@ export default class Calendar extends React.Component {
     return monthText;
   }
 
-  hide(date) {
-    if(date == "0") {
-      return "hide-day";
-    }
-  }
-
   render() {
     const { currentDate } = this.state;
     const { currentMonth } = this.state;
@@ -53,6 +47,7 @@ export default class Calendar extends React.Component {
     const week3 = weeksArray[2].map((date, index) => <Day key={index} date={date}/>);
     const week4 = weeksArray[3].map((date, index) => <Day key={index} date={date}/>);
     const week5 = weeksArray[4].map((date, index) => <Day key={index} date={date}/>);
+    const week6 = weeksArray[5] !== undefined ? weeksArray[5].map((date, index) => <Day key={index} date={date}/>) : "";
 
     return (
       <div class="container">
@@ -91,6 +86,9 @@ export default class Calendar extends React.Component {
     					<tr>
     						{week5}
     					</tr>
+              <tr>
+                {week6}
+              </tr>
     				</tbody>
     			</table>
           <div class="ring-left"></div>
