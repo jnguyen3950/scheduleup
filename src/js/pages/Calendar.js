@@ -42,12 +42,12 @@ export default class Calendar extends React.Component {
     const { monthText } = this.state;
     const weeksArray = cal.monthDays(currentYear, currentMonth);
 
-    const week1 = weeksArray[0].map((date, index) => <Day key={index} date={date}/>);
-    const week2 = weeksArray[1].map((date, index) => <Day key={index} date={date}/>);
-    const week3 = weeksArray[2].map((date, index) => <Day key={index} date={date}/>);
-    const week4 = weeksArray[3].map((date, index) => <Day key={index} date={date}/>);
-    const week5 = weeksArray[4].map((date, index) => <Day key={index} date={date}/>);
-    const week6 = weeksArray[5] !== undefined ? weeksArray[5].map((date, index) => <Day key={index} date={date}/>) : "";
+    const week1 = weeksArray[0].map((date, index) => <Day key={index} date={date} current={currentDate}/>);
+    const week2 = weeksArray[1].map((date, index) => <Day key={index} date={date} current={currentDate}/>);
+    const week3 = weeksArray[2].map((date, index) => <Day key={index} date={date} current={currentDate}/>);
+    const week4 = weeksArray[3].map((date, index) => <Day key={index} date={date} current={currentDate}/>);
+    const week5 = weeksArray[4].map((date, index) => <Day key={index} date={date} current={currentDate}/>);
+    const week6 = weeksArray[5] !== undefined ? weeksArray[5].map((date, index) => <Day key={index} date={date} current={currentDate}/>) : "";
 
     return (
       <div class="container">
